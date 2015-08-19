@@ -1,3 +1,4 @@
+require "action_dispatch"
 require "action_dispatch/untrusted_ip/version"
 
 module ActionDispatch
