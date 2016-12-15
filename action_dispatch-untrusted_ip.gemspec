@@ -11,12 +11,12 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Defines request.untrusted_ip}
   spec.description   = %q{Defines request.untrusted_ip from the HTTP_X_ORIG_FORWARDED_FOR header}
-  spec.homepage      = "http://gitlab.corp.avvo.com/internal-gems/action_dispatch-untrusted_ip"
+  spec.homepage      = "http://github.com/avvo/action_dispatch-untrusted_ip"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
   # delete this section to allow pushing this gem to any host.
   if spec.respond_to?(:metadata)
-    spec.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com'"
+    spec.metadata['allowed_push_host'] = "http://gems.corp.avvo.com"
   else
     raise "RubyGems 2.0 or newer is required to protect against public gem pushes."
   end

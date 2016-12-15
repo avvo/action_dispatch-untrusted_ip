@@ -28,4 +28,4 @@ request.untrusted_ip
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitLab at https://gitlab.corp.avvo.com/internal-gems/action_dispatch-untrusted_ip.
+Bug reports and pull requests are welcome on GitLab at https://github.com/avvo/action_dispatch-untrusted_ip.
