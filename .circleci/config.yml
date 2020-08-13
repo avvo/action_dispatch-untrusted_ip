@@ -1,0 +1,22 @@
+---
+version: 2.1
+orbs:
+  package-build-and-push: avvo/package-build-and-push@0.0.2
+jobs:
+  build:
+    docker:
+      - image: circleci/ruby:2.5
+    steps:
+      - checkout
+      - package-build-and-push/gem-build-and-push
+workflows:
+  version: 2.1
+  build-workflow:
+    jobs:
+    - build:
+        context: org-global
+        filters:
+          tags:
+            only: /^v[0-9]+\.[0-9]+\.[0-9]+.*/
+          branches:
+            ignore: /.*/
