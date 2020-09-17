@@ -1,8 +1,14 @@
 ---
 version: 2.1
 orbs:
-  artifact-management: avvo/artifact-management@0.0.2
+  artifact-management: avvo/artifact-management@0.0.4
 jobs:
+  test:
+    docker:
+      - image: circleci/ruby:2.5
+    steps:
+      - checkout
+      - artifact-management/gem-test
   build:
     docker:
       - image: circleci/ruby:2.5
@@ -13,6 +19,8 @@ workflows:
   version: 2.1
   build-workflow:
     jobs:
+    - test:
+        context: org-global
     - build:
         context: org-global
         filters:
