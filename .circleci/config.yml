@@ -1,14 +1,18 @@
 ---
 version: 2.1
 orbs:
-  artifact-management: avvo/artifact-management@0.0.4
+  artifact-management: avvo/artifact-management@0.0.6
 jobs:
   test:
     docker:
-      - image: circleci/ruby:2.5
+      - image: vicenteramos/ruby-testing
+        auth:
+          username: $DOCKERHUB_USER
+          password: $DOCKERHUB_PASS
     steps:
       - checkout
-      - artifact-management/gem-test
+      - artifact-management/gem-test:
+            ruby_versions: "2.2.10,2.3.8,2.4.10,2.5.8,2.6.6"
   build:
     docker:
       - image: circleci/ruby:2.5

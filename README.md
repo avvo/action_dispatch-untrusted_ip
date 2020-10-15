@@ -2,6 +2,15 @@
 
 This gem tries to centralize handling of untrusted HTTP_X_FORWARDED_FOR headers. If a user is using an external proxy that sets an HTTP_X_FORWARDED_FOR header, we will normally reject it at our load balancer. Instead, we pass this value to our applications as HTTP_X_ORIG_FORWARDED_FOR and let our applications decide what to do with it. This gem provides a simple accessor on the `ActionDispatch::Request` object.
 
+## Tested Ruby Versions
+| Version     | Result                     |
+| ----------- | -------------------------- |
+| 2.6.6       | :heavy_check_mark:         |
+| 2.5.8       | :heavy_check_mark:         |
+| 2.4.10      | :heavy_check_mark:         |
+| 2.3.8       | :heavy_check_mark:         |
+| 2.2.10      | :heavy_check_mark:         |
+
 ## Installation
 
 Add this line to your application's Gemfile:
